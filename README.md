@@ -14,4 +14,4 @@ Click on 'TAKE PHOTO' again... You are now using the native camera for its sourc
 This is what you need to do if you use custom plugins when developing within the web browser.
 
 
-I would suggest NOT mocking native wrappers of plugins, instead have a provider level as the language of the plugin may change.
+I would suggest NOT mocking Ionic Native wrappers of plugins or indeed plugins themselves, instead have a provider level as the syntax of the plugin may change.
