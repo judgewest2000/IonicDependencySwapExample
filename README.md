@@ -3,7 +3,7 @@ An example of swapping dependency from real to mock with a simple boolean change
 
 To see in action.  Run on either a real device of emulated device...
 
-> ionic emaulate android --livereload
+> ionic emulate android --livereload
 
 Click on 'TAKE PHOTO', notice it loads the image immediately from a base64 string - refer to photo-taker.ts
 
