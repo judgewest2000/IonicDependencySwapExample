@@ -28,9 +28,9 @@ export class PhotoTakerProviderImpl implements PhotoTakerProvider {
   async takePhoto() {
 
     const size = await this.getSize();
-    
+
     const sourceType = await this.getCameraType();
-    
+
     const options: CameraOptions = {
       quality: 100,
       destinationType: this.camera.DestinationType.DATA_URL,
@@ -113,11 +113,7 @@ export class PhotoTakerProviderMock implements PhotoTakerProvider {
 
       const image = this.getImage();
 
-
-      resizeImage(150, image, data => {
-        resolve(data);
-      });
-
+      resolve(image);
 
 
     });
