@@ -1,5 +1,5 @@
 # IonicDependencySwapExample
-An example of swapping dependency from real to mock with a simple boolean change
+An example of swapping dependency from real to mock by detection of 'cordova' being available.
 
 To see in action.  Run on either a real device of emulated device...
 
