@@ -3,16 +3,6 @@ import { Injectable } from '@angular/core';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { ActionSheetController } from 'ionic-angular';
 
-/*
-  Generated class for the PhotoTakerProvider provider.
-
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
-
-
-
-
 export abstract class PhotoTakerProvider {
   abstract takePhoto(): Promise<string>;
 }
@@ -21,12 +11,9 @@ export abstract class PhotoTakerProvider {
 
 export class PhotoTakerProviderImpl implements PhotoTakerProvider {
 
-  constructor(private camera: Camera, public actionSheetCtrl: ActionSheetController) {
-
-  }
+  constructor(private camera: Camera, public actionSheetCtrl: ActionSheetController) { }
 
   async takePhoto() {
-
     const size = await this.getSize();
 
     const sourceType = await this.getCameraType();
@@ -44,13 +31,11 @@ export class PhotoTakerProviderImpl implements PhotoTakerProvider {
 
     const imageData = await this.camera.getPicture(options);
 
-
     return `data:image/jpeg;base64,${imageData}`;
   }
 
 
   getCameraType(): Promise<number> {
-
     return new Promise((resolve, reject) => {
       let actionSheet = this.actionSheetCtrl.create({
         title: 'Camera source',
@@ -70,7 +55,6 @@ export class PhotoTakerProviderImpl implements PhotoTakerProvider {
       actionSheet.present();
     });
   }
-
 
   getSize(): Promise<number> {
     return new Promise((resolve, reject) => {
@@ -92,13 +76,6 @@ export class PhotoTakerProviderImpl implements PhotoTakerProvider {
       actionSheet.present();
     });
   }
-
-
-
-
-
-
-
 }
 
 @Injectable()
@@ -110,15 +87,8 @@ export class PhotoTakerProviderMock implements PhotoTakerProvider {
 
   takePhoto(): Promise<string> {
     return new Promise((resolve, reject) => {
-
       const image = this.getImage();
-
       resolve(image);
-
-
     });
   }
-
-
-
 }
